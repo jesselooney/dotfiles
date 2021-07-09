@@ -1,3 +1,17 @@
-- clean: []
-- link: {}
-- shell: []
+- defaults:
+    link:
+        create: true
+        relink: true
+
+- clean: ['~', '~/.config']
+
+- link:
+    ~/.config/fish/:
+        glob: true
+        path: fish/*
+
+- create:
+    ~/.ssh:
+
+- shell:
+    - chsh -s "$(which fish)"
