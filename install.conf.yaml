@@ -1,17 +1,17 @@
 - defaults:
-    link:
-        create: true
-        relink: true
+      link:
+          create: true
+          glob: true
+          relink: true
 
-- clean: ['~', '~/.config']
+- clean: ["~", "~/.config"]
 
 - link:
-    ~/.config/fish/:
-        glob: true
-        path: fish/*
+      ~/.config/fish/: fish/*
+      ~/.gitconfig: git/gitconfig
 
 - create:
-    ~/.ssh:
+      ~/.ssh:
 
 - shell:
-    - chsh -s "$(which fish)"
+      - chsh -s "$(which fish)"
