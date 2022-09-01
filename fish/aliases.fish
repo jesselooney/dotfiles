@@ -11,3 +11,7 @@ alias ll='ls -lah'
 
 # git
 alias g='git'
+
+# Docker
+alias d='docker'
+alias dc='docker compose'
