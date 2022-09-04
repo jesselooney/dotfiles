@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+echo "Would you like to install your packages with yay? [y/N]"
+read -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    yay -S --needed - < ~/dotfiles/pkglist.txt
+fi

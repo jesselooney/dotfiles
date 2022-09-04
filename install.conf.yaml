@@ -1,8 +1,10 @@
 - defaults:
     link:
       create: true
-        glob: true
-        relink: true
+      glob: true
+      relink: true
+    shell:
+      quiet: true
 
 - clean: ["~", "~/.config"]
 
@@ -15,10 +17,18 @@
     ~/.ssh:
 
 - shell:
-    # - chsh -s "$(which fish)"
-    # - curl -sS https://starship.rs/install.sh | sh -s -- -f
-  - command: read var && echo Your variable is $var
+  # Enter sudo mode so that subsequent commands can run without requiring a password
+  - command: sudo echo "Entered sudo mode"
+    description: Entering sudo mode
     stdin: true
     stdout: true
-    description: Reading and printing variable
-    quiet: true
+
+  - [sudo chsh -s "$(which fish)" $USER, Making fish the default shell]
+  - [curl -sS https://starship.rs/install.sh | sh -s -- -f, Installing starship.rs]
+
+  # TODO: install fonts?
+
+  - command: scripts/install-packages
+    description: ""
+    stdin: true
+    stdout: true
