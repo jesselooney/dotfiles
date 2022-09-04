@@ -8,6 +8,7 @@
 
 - link:
       ~/.config/fish/: fish/*
+      ~/.config/starship.toml: starship/starship.toml
       ~/.gitconfig: git/gitconfig
 
 - create:
