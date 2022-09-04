@@ -1,19 +1,24 @@
 - defaults:
-      link:
-          create: true
-          glob: true
-          relink: true
+    link:
+      create: true
+        glob: true
+        relink: true
 
 - clean: ["~", "~/.config"]
 
 - link:
-      ~/.config/fish/: fish/*
-      ~/.config/starship.toml: starship/starship.toml
-      ~/.gitconfig: git/gitconfig
+    ~/.config/fish/: fish/*
+    ~/.config/starship.toml: starship/starship.toml
+    ~/.gitconfig: git/gitconfig
 
 - create:
-      ~/.ssh:
+    ~/.ssh:
 
 - shell:
-      - chsh -s "$(which fish)"
-      - curl -sS https://starship.rs/install.sh | sh -s -- -f
+    # - chsh -s "$(which fish)"
+    # - curl -sS https://starship.rs/install.sh | sh -s -- -f
+  - command: read var && echo Your variable is $var
+    stdin: true
+    stdout: true
+    description: Reading and printing variable
+    quiet: true
