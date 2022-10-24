@@ -1,4 +1,4 @@
-Impartiall's Dotfiles
+Jesse's Dotfiles
 =====================
 
-Impartiall's dotfiles managed with [Dotbot](https://github.com/anishathalye/dotbot).
+Jesse's dotfiles managed with [Dotbot](https://github.com/anishathalye/dotbot).
